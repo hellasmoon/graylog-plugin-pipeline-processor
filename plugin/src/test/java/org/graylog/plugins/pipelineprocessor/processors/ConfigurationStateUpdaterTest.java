@@ -143,6 +143,11 @@ public class ConfigurationStateUpdaterTest {
         }
 
         @Override
+        public List<Stream> loadByTitle(String title) {
+            return null;
+        }
+
+        @Override
         public void destroy(Stream stream) throws NotFoundException {
             if (store.remove(stream.getId()) == null) {
                 throw new NotFoundException();
